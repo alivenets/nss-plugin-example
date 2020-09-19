@@ -8,3 +8,4 @@ project(nss-plugin-example)
 find_package(PkgConfig REQUIRED)
 
 add_subdirectory(dbus-service)
+add_subdirectory(nss-plugin)
