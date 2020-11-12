@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE node PUBLIC
+"-//freedesktop//DTD D-Bus Object Introspection 1.0//EN"
+"http://standards.freedesktop.org/dbus/1.0/introspect.dtd">
+<node>
+    <interface name="com.example.UserDb">
+        <method name="ListGroups">
+            <arg type="as" name="groups" direction="out"/>
+        </method>
+
+        <method name="ListUsers">
+            <arg type="as" name="users" direction="out"/>
+        </method>
+
+        <method name="GetUserByName">
+            <arg type="s" name="name" direction="in"/>  
+            <arg type="u" name="uid" direction="out"/>
+            <arg type="u" name="gid" direction="out" />
+        </method>
+
+        <method name="GetUserById">
+            <arg type="u" name="uid" direction="in"/>
+            <arg type="s" name="name" direction="out"/>
+            <arg type="u" name="gid" direction="out" />
+        </method>
+
+        <method name="GetGroupByName">
+            <arg type="s" name="name" direction="in"/>
+            <arg type="u" name="gid" direction="out"/>
+            <arg type="as" name="members" direction="out"/>
+        </method>
+        
+        <method name="GetGroupById">
+            <arg type="u" name="gid" direction="in"/>
+            <arg type="s" name="name" direction="out"/>
+            <arg type="as" name="members" direction="out"/>
+        </method>  
+    </interface>
+</node>
+

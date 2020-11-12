@@ -8,8 +8,8 @@ Vagrant.configure(2) do |config|
     end
 
     config.vm.provision "shell", inline: "sudo apt-get update"
-    config.vm.provision "shell", inline: "sudo apt-get install -y build-essential automake libtool cmake pkg-config gdb libsystemd-dev libexpat1-dev"
-
+    config.vm.provision "shell", inline: "sudo apt-get install -y build-essential automake libtool cmake pkg-config gdb libsystemd-dev libexpat1-dev libglib2.0-dev libglibmm-2.4-dev python3-pip"
+    config.vm.provision "shell", path: "install-gdbus-codegen.sh"
     config.vm.provision "shell", inline: "sudo groupadd service-client || true"
     config.vm.provision "shell", inline: "sudo useradd service-user -g service-client || true"
 
