@@ -5,7 +5,7 @@ include(FindPkgConfig)
 
 add_library(nss_example SHARED lib.c)
 
-target_link_libraries(nss_example PUBLIC -Wl,-soname,libnss_example.so.2)
+target_link_libraries(nss_example PUBLIC -Wl,-soname,libnss_example.so.2 PRIVATE userdb-client-common)
 set_target_properties(nss_example PROPERTIES SOVERSION 2)
 
 install(TARGETS nss_example DESTINATION ${CMAKE_INSTALL_LIBDIR})
